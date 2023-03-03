@@ -9,6 +9,56 @@
 </head>
 
 <body>
+  <div id="root">
+    <script>
+
+      // 값을 할당하는 방식으로 스타일 시트를 거치지 않고 동적으로 만들었다. = 동적 할당
+      const root = document.getElementById('root');
+      const makeUl = document.createElement('ul');
+      root.appendChild(makeUl);
+
+      // makeUl.style.height = "100px"
+      // makeUl.style.width = "100px"
+      // makeUl.style.border = "1px solid black";
+
+      // makeUl.style[ulstyleObject[0]] = "100px";
+      // makeUl.style[ulstyleObject[1]] = "100px";
+      // makeUl.style[ulstyleObject[2]] = "1px solid black";
+
+      const ulstyleObject = ["width", "height", "border"];
+      const ulstyleValue = ["100px", "100px", "1px solid black"]
+
+      // for (let i = 0; i < ulstyleObject.length; i++) {
+      //   makeUl.style[ulstyleObject[i]] = ulstyleValue[i];
+      // }
+
+      let domStyle = {
+        firstArray: ["width", "height", "border"],
+        secondArray: ["100px", "100px", "1px solid black"],
+        element: root.children[0],
+      }
+
+      function twoArrayDOMstyling(firstArray, secondArray, element) {
+
+        for (let i = 0; i < firstArray.length; i++) {
+          element.style[firstArray[i]] = secondArray[i];
+        }
+
+      }
+      twoArrayDOMstyling(ulstyleObject, ulstyleValue, makeUl);
+
+      function oneObjectDOMStyling(object) {
+        for (let i = 0; i < object.firstArray.length; i++) {
+          object.style[object.firstArray[i]] = object.secondArray[i];
+        }
+      }
+
+      // 1. 내가 알고 있는 가장 직관적인 방법으로 쓴다. 일단 써야 보인다
+      // 2. 쓰고 나서 묶을 수 있는가를 본다. 패턴을 찾는다. 래핑 ㄱ
+      // 3. 반복문으로 자동화 한다.
+
+    </script>
+  </div>
 
 </body>
 
