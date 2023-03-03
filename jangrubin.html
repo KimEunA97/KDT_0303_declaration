@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+
+<script>
+
+// const bannerContainer = document.createElement('div');
+// bannerContainer.setAttribute("id","slide_Wrap");
+// document.body.appendChild(bannerContainer);
+
+
+// const bannerMenu = document.createElement('ul');
+// createUl.setAttribute("id", "slide")
+// createDiv.appendChild(createUl);
+
+// const createLi = document.createElement('li');
+// createLi.textContent = "바보"
+// createUl.appendChild(createLi);
+
+// function createEli(eliment,) {
+//   const createLi = document.createElement('li');
+// createLi.textContent = "바보"
+// createUl.appendChild(createLi);
+// }
+
+// 엘리먼트 생성 함수
+function createElement(eName){
+  let element=document.createElement(eName);
+  return element;
+}
+
+let body = document.getElementsByTagName('body');
+// console.dir(body[0]);
+
+let container=createElement("div");
+let list=createElement("ul");
+
+body[0].appendChild(container);
+container.appendChild(list);
+
+
+for(let i=0; i<5; i++) {
+  let li=createElement("li");
+  let s=list.appendChild(li);
+  console.dir(li); 
+}
+
+
+
+
+// 타이머 함수
+function ifTimerEnd(time){
+  if(time>5) return true;
+  else return false;
+}
+
+
+
+
+</script>
+  
+</body>
+</html>
