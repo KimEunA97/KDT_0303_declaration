@@ -1,22 +1,29 @@
 const startingType = [
   "불",
   "물",
-  "풀",
-  "전기",
-  "얼음",
-  "비행",
-
+  // "풀",
+  // "전기",
+  // "얼음",
+  // "비행",
 ]
 
-const TypePoke = {
+const startingTypeData = {
 
-  fire: ["브케인", "파이리", "불꽃숭이"],
-  water: ["팽도리", "꼬부기"],
-  leaf: ["치코리타", "모부기", "나무지기"],
-  elect: ["꼬링크", "썬더라이"],
-  ice: ["글레이시아", "바닐프티"],
-  air: ["구구", "찌르꼬"],
+}
 
+
+function TypePokeData() {
+
+  const TypePoke = {
+
+    fire: ["브케인", "파이리", "불꽃숭이"],
+    water: ["팽도리", "꼬부기"],
+    // leaf: ["치코리타", "모부기", "나무지기"],
+    // elect: ["꼬링크", "썬더라이"],
+    // ice: ["글레이시아", "바닐프티"],
+    // air: ["구구", "찌르꼬"],
+
+  }
 }
 
 
@@ -31,19 +38,35 @@ function getRandomInt(min, max) {
 
 
 let root = document.getElementById("root");
-let makeUl = document.createElement("ul");
+let Ul = document.createElement("ul");
 
 console.dir(root);
-root.append(makeUl);
-makeUl.innerText = "스타팅"
+root.append(Ul);
+Ul.innerText = "스타팅"
 
-let Text =makeUl.innerText;
-
-
+let Text = Ul.innerText;
 
 
-makeUl.addEventListener("click", function () {
-  console.log(startingType[getRandomInt(0, startingType.length)]);
+function qwe() { Ul.addEventListener("click", function (asd) {
 
+  this.textContent = startingType[getRandomInt(0, startingType.length)];
+  let tc = this.textContent;
+  console.log(tc);
+  return tc = asd;
+
+
+})
+}
+
+qwe();
+console.log(tc);
+
+
+
+
+tc.addEventListener("click", function () {
+
+  console.log("text");
+  // console.log(qwe(asd));
 })
 
